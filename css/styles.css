@@ -1,0 +1,194 @@
+@layer reset {
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Prevent font size inflation */
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+/* Remove default margin in favour of better control in authored CSS */
+body, h1, h2, h3, h4, p,
+figure, blockquote, dl, dd {
+  margin-block-end: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  line-height: 1.4;
+}
+
+/* Set shorter line heights on headings and interactive elements */
+h1, h2, h3, h4,
+button, input, label {
+  line-height: 1.3;
+}
+
+/* Balance text wrapping on headings */
+h1, h2,
+h3, h4 {
+  text-wrap: balance;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+  color: currentColor;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+}
+
+@layer base {
+  :root {
+    /* colors */
+    --White: hsl(0, 0%, 100%);
+
+    /* spacing */
+    --space-100: 0.5rem; /* 8px */
+    --space-150: 0.75rem; /* 12px */
+    --space-200: 1rem; /* 16px */
+    --space-300: 1.5rem; /* 24px */
+    --space-400: 2rem; /* 32px */
+    --space-500: 2.5rem; /* 40px */
+    --space-600: 3rem; /* 48px */
+    --space-1600: 8rem; /* 128px */
+
+
+    /* font families */
+    --main: "Outfit", sans-serif;
+    --headline: "Young Serif", serif;
+
+    /* type scale */
+    --base-size: 1rem; /* 16px */
+    --scale: 1.333;
+
+    /* Start from base size for smallest heading */
+    --h6: var(--base-size); 
+    --h5: calc(var(--h6) * var(--scale)); /* scale up from h6 */
+    --h4: calc(var(--h5) * var(--scale));
+    --h3: calc(var(--h4) * var(--scale));
+    --h2: calc(var(--h3) * var(--scale));
+    --h1: calc(var(--h2) * var(--scale));
+
+    --small: calc(var(--base-size) / var(--scale)); /* smaller than base */
+  }
+
+  /* border box model: https://css-tricks.com/box-sizing/ */
+  html {
+    box-sizing: border-box;
+  }
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
+  }
+
+  body {
+    font-family: var(--main);
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: var(--headline);
+  }
+  h1 {
+    font-size: var(--h1);
+  }
+  h2 {
+    font-size: var(--h2);
+  }
+  h3 {
+    font-size: var(--h3);
+  }
+  h4 {
+    font-size: var(--h4);
+  }
+  h5 {
+    font-size: var(--h5);
+  }
+  h6 {
+    font-size: var(--h6);
+  }
+  .h1 {
+    font-size: var(--h1);
+  }
+  .h2 {
+    font-size: var(--h2);
+  }
+  .h3 {
+    font-size: var(--h3);
+  }
+  .h4 {
+    font-size: var(--h4);
+  }
+  .h5 {
+    font-size: var(--h5);
+  }
+  .h6 {
+    font-size: var(--h6);
+  }
+  p {
+    font-size: var(--base-size);
+    font-family: var(--main);
+  }
+ 
+  figure {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@layer components {
+    footer.attribution {
+        padding: 2rem 0;
+        background-color: var(--Stone100);
+    }
+    .attribution p {
+       font-size: var(--small); text-align: center;
+      }
+    .attribution a:hover, .attribution a:focus, .attribution a:active {
+      color: var(--Green);
+    }
+  } 
+
+@layer media-queries {
+
+  @media (prefers-reduced-motion: reduce) {
+  transition: none; /* Remove transitions to respect user preference */
+  }
+
+
+  @media (min-width: 48rem) {     /* 768px and above -- tablet */
+   
+  } 
+
+  @media (min-width: 90rem) {     /* 1440px and above -- desktop */
+
+  } 
+
+}
