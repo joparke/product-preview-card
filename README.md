@@ -23,7 +23,7 @@ This is a solution to the [Product preview card challenge on Frontend Mentor](ht
 
 - HTML5 markup
 - CSS custom properties
-- Flecbox & CSS grid
+- Flexbox & CSS grid
 - Picalilli CSS reset
 - VS Code
 
