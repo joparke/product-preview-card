@@ -84,6 +84,7 @@ picture {
 
     /* type size */
     --base-size: 1rem; /* 16px */
+    --small: .75rem; /* 12px */
   }
 
   body {
@@ -143,30 +144,37 @@ picture {
 }
 
 @layer components {
-    footer.attribution {
-        padding: 2rem 0;
-    }
-    .attribution p {
-       font-size: var(--small); text-align: center;
-      }
-    .attribution a:hover, .attribution a:focus, .attribution a:active {
-      color: var(--Green);
-    }
 
     body {
       background-color: var(--cream);
       color: var(--black);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    footer.attribution {
+        font-size: var(--small);
+    }
+    .attribution p {
+      font-size: var(--small);
+      text-align: center;
+      }
+    .attribution a:hover, .attribution a:focus, .attribution a:active {
+      color: var(--green500);
     }
 
     main {
       background-color: var(--white);
       border-radius: var(--space-100);
-      width: 93vw;
       display: grid;
       grid-template-rows: 1fr 3fr;
       overflow: hidden;
       margin-block-start: 2rem;
       margin-inline: auto;
+      max-width: 21.875rem;
     }
 
     picture {
@@ -235,15 +243,11 @@ picture {
 
 @layer media-queries {
 
-  @media (prefers-reduced-motion: reduce) {
-  transition: none; /* Remove transitions to respect user preference */
-  }
-
-
   @media (min-width: 48rem) {     /* 768px and above -- tablet */
       main {
       grid-template-columns: 1fr 1fr;
       grid-template-rows: 1fr;
+      max-width: 37.5rem;
        }
     picture {
       grid-column-start: 1;
@@ -257,11 +261,8 @@ picture {
       grid-column-end: 3;
       grid-row-start: 1;
       grid-row-end: 1;
+      align-self: center;
     }
-  } 
-
-  @media (min-width: 90rem) {     /* 1440px and above -- desktop */
-
-  } 
+  }
 
 }
