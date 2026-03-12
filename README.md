@@ -17,7 +17,7 @@ This is a solution to the [Product preview card challenge on Frontend Mentor](ht
 ### Links
 
 - Repo URL: [https://github.com/joparke/product-preview-card](https://github.com/joparke/product-preview-card)
-- Live Site URL: [https://joparke.github.io/recipe-page/](https://joparke.github.io/recipe-page/)
+- Live Site URL: [https://joparke.github.io/product-preview-card/](https://joparke.github.io/product-preview-card/)
 
 ### Built with
 
